@@ -58,6 +58,11 @@ def exec_code(tab, line_counter, condition = None, return_line = None, operation
             if(not condition_res):
                 line_counter = return_line
                 return
+            else:
+                line_counter += 1
+                while(code[line_counter].count('\t') > tab):
+                    line_counter += 1
+                return
         
         if(operation == 1):
             if(line.count('\t') < tab):

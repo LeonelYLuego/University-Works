@@ -1,0 +1,7 @@
+print('Calcular el factorial de 5')
+i = 5
+res = 1
+while(i >= 1):
+    res = res * i
+    i = i - 1
+print('Resultado: ', res)

@@ -31,8 +31,8 @@ def is_valid_combination(combinacion, total_tweets):
 f = False
 
 while f==False:
-    combinacion = get_random_combination(8, 800)
-    if is_valid_combination(combinacion, 1000):
+    combinacion = get_random_combination(8, 3000)
+    if is_valid_combination(combinacion, 10000):
         new_population.append(combinacion)
         f = True
 
@@ -54,8 +54,8 @@ n_popluation = 20
 for i in range(50):
     f = 0
     while f != n_popluation:
-        combinacion = get_random_combination(8, 500)
-        if is_valid_combination(combinacion, 1000):
+        combinacion = get_random_combination(8, 3000)
+        if is_valid_combination(combinacion, 10000):
             if numpy.std(new_population) > numpy.std(combinacion):               
                 population.append(combinacion)
                 f += 1
@@ -109,8 +109,8 @@ for i in range(50):
     hijo_1[r] = 0
     hijo_2[r2] = 0
 
-    hijo_1[r] = 1000 - sum(hijo_1)
-    hijo_2[r2] = 1000 - sum(hijo_2)
+    hijo_1[r] = 10000 - sum(hijo_1)
+    hijo_2[r2] = 10000 - sum(hijo_2)
 
     print('Mutaciones')        
     print(hijo_1, 'PROM: ', numpy.mean(hijo_1), ' Desv: ', numpy.std(hijo_1))
@@ -118,12 +118,10 @@ for i in range(50):
     
     population = []
     
-    population.append(padre_1)
-    population.append(padre_2)
     population.append(hijo_1)
     population.append(hijo_2)
 
     
-    n_popluation = 16
+    n_popluation = 18
     
         
